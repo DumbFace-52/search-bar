@@ -1,0 +1,106 @@
+/* || Import Google Fpnts */
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DynaPuff:wght@400..700&family=Farsan&display=swap');
+
+
+/* || Reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* || Variables */
+:root {
+    /* Font */
+    --FF: "Kanit", sans-serif;
+
+    /* Color */    
+    --BGC: radial-gradient(ellipse at bottom, aliceblue 0%, snow 100%);
+    --C: black;
+    --FORM-BGC: whitesmoke;
+    --ICON-COLOR: dimgray;
+}
+
+/* || Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Color */
+        --BGC: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        --C: whitesmoke;
+        --FORM-BGC: #1b2735;
+        --ICON-COLOR: lightgray;
+    }
+}
+
+
+/* || General Styles */
+body {
+    font-family: var(--FF);
+    height: 100vh;
+    width: 100%;
+    background: var(--BGC);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Ensures no body margin interferes */
+}
+
+/* Centered Form */
+form {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: var(--FORM-BGC);
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid var(--C);
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.5s ease; /* Smooth width transition */
+}
+
+/* Input and Icon Styling */
+input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+/* Icon styling */
+.fa {
+    box-sizing: border-box;
+    padding: 10px;
+    color: var(--ICON-COLOR);
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Expanding Form on Hover */
+form:hover {
+    width: 300px; /* Expands the form width on hover */
+}
+
+form:hover input {
+    display: block; /* Shows the input field when hovered */
+}
+
+form:hover .fa {
+    background: var(--C);
+    color: var(--FORM-BGC);
+}
